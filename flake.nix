@@ -19,6 +19,9 @@
           pkgs.git-branchless
           pkgs.cntr
           pkgs.cachix
+          pkgs.lix
+          pkgs.creduce
+          pkgs.drawio-headless
           pkgs.nix-output-monitor
           pkgs.nix-tree
           pkgs.nix-update
