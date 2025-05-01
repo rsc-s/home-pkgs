@@ -2,19 +2,20 @@
   description = "Locally-installed packages";
 
   inputs = {
-    nixpkgs-input.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    # nixpkgs-input.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     pac-input.url = "github:katrinafyi/pac-nix";
   };
 
-  outputs = { self, nixpkgs-input, pac-input }:
+  outputs = { self, pac-input }:
 
     let
       system = "x86_64-linux";
       pac = pac-input.packages.${system};
-      pkgs = nixpkgs-input.legacyPackages.${system};
+      pkgs = pac-input.inputs.nixpkgs.legacyPackages.${system};
     in {
       packages.${system}.default = pkgs.buildEnv {
         name = "local-profile-packages";
+        ignoreCollisions = true;
         paths = [
           pkgs.git-branchless
           pkgs.cntr
@@ -27,6 +28,17 @@
           pkgs.nix-update
           pkgs.nurl
           pkgs.zotero
+          pkgs.pycdc
+          pkgs.steghide
+          pkgs.terraform
+          pac.ddisasm
+          pac.gtirb-semantics
+          pac.aslp
+          pac.basil
+
+          pkgs.pkgsCross.aarch64-multiplatform.pkgsBuildHost.gcc
+          pkgs.pkgsCross.aarch64-multiplatform.pkgsBuildHost.clang
+          # pkgs.z3_4_8
         ];
       };
     };
