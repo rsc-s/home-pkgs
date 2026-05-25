@@ -31,8 +31,19 @@
           pkgs.pycdc
           pkgs.steghide
           pkgs.terraform
+          pkgs.nix-diff
+          pkgs.cvc5
+          # pkgs.lua51Packages.lua
+
+          pkgs.nixfmt-rfc-style
+
+          pac.bnfc-treesitter
+
+          pkgs.gladtex
+
           pac.ddisasm
           pac.gtirb-semantics
+          pac.gtirb-pprinter
           pac.aslp
           pac.basil
 
