@@ -21,7 +21,7 @@
           pkgs.cntr
           pkgs.cachix
           pkgs.lix
-          pkgs.creduce
+          # pkgs.creduce
           pkgs.drawio-headless
           pkgs.nix-output-monitor
           pkgs.nix-tree
@@ -30,7 +30,7 @@
           pkgs.zotero
           pkgs.pycdc
           pkgs.steghide
-          pkgs.terraform
+          # pkgs.terraform
           pkgs.nix-diff
           pkgs.cvc5
           # pkgs.lua51Packages.lua
