@@ -1,5 +1,7 @@
 {
   description = "Locally-installed packages";
+  nixConfig.extra-substituters = [ "https://pac-nix.cachix.org/" ];
+  nixConfig.extra-trusted-public-keys = [ "pac-nix.cachix.org-1:l29Pc2zYR5yZyfSzk1v17uEZkhEw0gI4cXuOIsxIGpc=" ];
 
   inputs = {
     # nixpkgs-input.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -36,6 +38,8 @@
           # pkgs.lua51Packages.lua
 
           pkgs.nixfmt-rfc-style
+          pkgs.nixfmt
+          pkgs.nix-diff
 
           pac.bnfc-treesitter
 
@@ -45,7 +49,7 @@
           pac.gtirb-semantics
           pac.gtirb-pprinter
           pac.aslp
-          pac.basil
+          # pac.basil
 
           pkgs.pkgsCross.aarch64-multiplatform.pkgsBuildHost.gcc
           pkgs.pkgsCross.aarch64-multiplatform.pkgsBuildHost.clang
